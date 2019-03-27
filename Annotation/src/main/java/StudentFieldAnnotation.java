@@ -1,4 +1,6 @@
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
@@ -16,10 +18,10 @@ import java.lang.annotation.Target;
  * @Date 2019/3/26 23:10
  * @Version 1.0
  **/
-@Target({ElementType.ANNOTATION_TYPE,ElementType.CONSTRUCTOR,ElementType.FIELD,ElementType.LOCAL_VARIABLE,ElementType.METHOD,
-ElementType.PACKAGE,ElementType.PARAMETER,ElementType.TYPE})
-public @interface StudentAnnotation {
-    public String name(); //作为一个属性不是我们认为的方法
-    public char sex(); //作为一个属性不是我们认为的方法
-    public int age(); //作为一个属性不是我们认为的方法
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface StudentFieldAnnotation {
+    public String Column(); //作为一个属性不是我们认为的方法
+    public String type(); //作为一个属性不是我们认为的方法
+    public int length() default 0; //作为一个属性不是我们认为的方法 default添加默认值
 }
