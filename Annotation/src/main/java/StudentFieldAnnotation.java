@@ -21,7 +21,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface StudentFieldAnnotation {
-    public String Column(); //作为一个属性不是我们认为的方法
-    public String type(); //作为一个属性不是我们认为的方法
-    public int length() default 0; //作为一个属性不是我们认为的方法 default添加默认值
+    String value(); //作为一个属性不是我们认为的方法
 }

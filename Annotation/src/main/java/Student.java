@@ -8,14 +8,20 @@
  **/
 @StudentTableAnnotation("testStudent")
 public class Student {
-    @StudentFieldAnnotation(Column="name",type="vachar",length = 10)
+    @StudentFieldAnnotation("name")
     public String name ;
 
-    @StudentFieldAnnotation(Column="sex",type="vachar",length = 10)
-    public char sex ;
+    @StudentFieldAnnotation("sex")
+    public String sex ;
 
-    @StudentFieldAnnotation(Column="age",type="int",length = 10)
-    public int age ;
+    @StudentFieldAnnotation("age")
+    public String age ;
+
+    public Student(String name, String sex, String age) {
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -25,19 +31,19 @@ public class Student {
         this.name = name;
     }
 
-    public char getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }
